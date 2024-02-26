@@ -13,8 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('_ttpe', function (Blueprint $table) {
+        Schema::create('type', function (Blueprint $table) {
             $table->id();
+
+            $table->string("type");
+
             $table->timestamps();
         });
     }
