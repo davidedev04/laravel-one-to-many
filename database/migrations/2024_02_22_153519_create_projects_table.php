@@ -13,12 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('type', function (Blueprint $table) {
-            $table->id();
+        Schema::create('projects', function (Blueprint $table) {
 
-            $table->string("type");
+            $table -> id();
 
-            $table->timestamps();
+            $table -> string('name');
+            $table -> text('description') -> nullable();
+
+            $table -> timestamps();
         });
     }
 
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_ttpe');
+        Schema::dropIfExists('projects');
     }
 };
